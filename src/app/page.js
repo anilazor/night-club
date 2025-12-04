@@ -1,4 +1,5 @@
 import HomeHero from "./components/home/hero/HomeHero";
+import Events from "./components/home/events/Events";
 import Gallery from "./components/home/gallery/Gallery";
 
 export default function Home() {
@@ -6,6 +7,8 @@ export default function Home() {
     <>
       <main className="grid col-(--full-col) grid-cols-subgrid">
         <HomeHero />
+        <Events />
+
         <Gallery />
       </main>
     </>

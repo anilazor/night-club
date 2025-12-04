@@ -16,8 +16,8 @@ const images = [
 export default function Gallery() {
   return (
     <>
-      <section className="w-screen">
-        <div className="my-20">
+      <section className="w-screen h-full col-span-full mt-90">
+        <div className=" h-50 flex items-center">
           <HeadingMain
             color="white"
             text="night club gallery"
