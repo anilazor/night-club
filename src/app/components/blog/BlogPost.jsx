@@ -5,6 +5,7 @@ import { Caption, HeadingSecondary } from "../typography";
 import BlogFull1 from "../../assets/content-img/blog_full1.jpg";
 import BlogFull2 from "../../assets/content-img/blog_full2.jpg";
 import BlogFull3 from "../../assets/content-img/blog_full3.jpg";
+import MainButton from "../buttons/MainButton";
 
 const BlogPost = () => {
   return (
@@ -51,9 +52,7 @@ const FetchBlogPost = async () => {
           <HeadingSecondary text={post.title} />
           <Caption text={`By: ${post.author} / 3 Comments / 16. November 2016`} color="pink" />
           <Caption text={post.content} wordLimit={70} />
-          <button className="border-t border-b col-span-full mt-5 w-1/2 md:w-35 py-3 justify-self-center md:justify-self-end">
-            <Caption text="READ MORE" />
-          </button>
+          <MainButton text="read more" styling="col-span-full mt-5 w-1/2 md:w-35 justify-self-center md:justify-self-end" />
         </div>
       </Link>
     );

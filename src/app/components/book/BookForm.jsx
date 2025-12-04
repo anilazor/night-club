@@ -1,3 +1,4 @@
+import MainButton from "../buttons/MainButton";
 import { Caption, HeadingXL } from "../typography";
 
 const BookForm = () => {
@@ -26,9 +27,7 @@ const BookForm = () => {
         <div className="border md:p-4 col-span-full h-80 p-2">
           <input type="text" className="w-full" defaultValue="Your Comment" />
         </div>
-        <button className="border-t border-b col-span-full w-1/2 md:w-35 py-3 justify-self-end">
-          <Caption text="RESERVE" />
-        </button>
+        <MainButton text="reserve" styling="col-span-full w-1/2 md:w-35 justify-self-end" />
       </form>
     </div>
   );

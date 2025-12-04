@@ -1,3 +1,4 @@
+import MainButton from "../../buttons/MainButton";
 import { Caption } from "../../typography";
 
 const ContactForm = () => {
@@ -13,9 +14,7 @@ const ContactForm = () => {
         <div className="border col-span-full h-70 p-2">
           <input type="text" className="w-full" defaultValue="Your Comment" />
         </div>
-        <button className="border-t border-b col-span-full w-1/2 md:w-35 py-3 justify-self-end">
-          <Caption text="SEND" />
-        </button>
+        <MainButton text="send" styling="col-span-full w-1/2 md:w-35 justify-self-end" />
       </form>
     </>
   );
