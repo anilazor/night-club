@@ -2,7 +2,7 @@ import { HeadingMain } from "../../typography";
 import Image from "next/image";
 import Overlay from "../../../assets/bg/slider_bg_overlay.png";
 import EventCard from "./EventCard";
-import Slider from "./Slider";
+import Slider from "../../slider/Slider";
 
 export default function events() {
   return (
