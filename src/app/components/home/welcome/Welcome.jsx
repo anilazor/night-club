@@ -1,5 +1,3 @@
-
-// components/home/Welcome.jsx
 import { HeadingMain } from "../../typography";
 import WelcomeCard from "./WelcomeCard";
 
