@@ -13,7 +13,7 @@ import RecentTweets from "./RecentTweets";
 
 const Footer = () => {
   return (
-    <div className="grid col-(--full-col) grid-cols-subgrid">
+    <div className="grid col-(--full-col) grid-cols-subgrid pb-8">
       <Image src={footerbg} alt="Footer background" width={300} height={200} className="col-(--full-col) row-1 self-stretch object-cover w-full h-auto grid-cols-subgrid opacity-10" priority={false} />
       <div className="col-(--content-col) row-1 grid grid-cols-subgrid justify-center mt-10 text-center gap-7">
         <div className="md:grid md:grid-cols-3 md:gap-5 md:text-start">
@@ -31,22 +31,21 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="hidden md:grid col-2 text-start gap-4">
-            <HeadingSecondary text="Recent posts" color="pink" />
-            <div className="flex gap-10">
+          <div className="hidden md:grid md:col-start-2 md:col-end-4 text-start gap-4">
+            <HeadingSecondary text="Recent posts" color="pink col-2 row-1" />
+            <div className="flex gap-7 self-center col-2 row-2">
               <RecentPosts text="Lorem Ipsum is simply dummy text of the printing and typesetting." date="April 17. 2018" image="img1" />
             </div>
-            <div className="flex gap-10">
+            <div className="flex gap-7 self-center col-2 row-3">
               <RecentPosts text="Lorem Ipsum is simply dummy text of the printing and typesetting." date="April 17. 2018" image="img2" />
             </div>
-          </div>
-          <div className="hidden md:grid col-3 text-start gap-4">
-            <HeadingSecondary text="Recent tweets" color="pink" />
-            <div className="flex gap-10">
-              <RecentTweets text="Lorem Ipsum is simply dummy text of the printing and typesetting." date="April 17. 2018" />
+
+            <HeadingSecondary text="Recent tweets" color="pink col-3 row-1" />
+            <div className="flex gap-10 col-3 row-2">
+              <RecentTweets text="Lorem Ipsum is simply dummy text of the printing and typesetting." date="5 hours ago" />
             </div>
-            <div className="flex gap-10">
-              <RecentTweets text="Lorem Ipsum is simply dummy text of the printing and typesetting." date="April 17. 2018" />
+            <div className="flex gap-10 col-3 row-3">
+              <RecentTweets text="Lorem Ipsum is simply dummy text of the printing and typesetting." date="5 hours ago" />
             </div>
           </div>
         </div>

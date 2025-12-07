@@ -5,9 +5,9 @@ const RecentTweets = ({ text, date }) => {
   return (
     <>
       <FaTwitter size={30} className="ml-5 text-accent" />
-      <div className="grid gap-2">
+      <div className="flex flex-col gap-1">
         <Caption text={text} />
-        <Caption text={date} />
+        <Caption text={date} color="pink" />
       </div>
     </>
   );
