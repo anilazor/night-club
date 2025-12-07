@@ -12,8 +12,8 @@ const RecentPosts = ({ text, date, image }) => {
   const imgSrc = imgMap[image] || img1;
   return (
     <>
-      <Image src={imgSrc} alt={image} className="self-stretch object-cover aspect-square" />
-      <div className="grid gap-2">
+      <Image src={imgSrc} alt={image} width={100} height={100} className="self-stretch w-full h-full object-cover aspect-square" />
+      <div className="flex flex-col gap-1">
         <Caption text={text} />
         <Caption text={date} color="pink" />
       </div>
