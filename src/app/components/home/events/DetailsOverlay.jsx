@@ -15,9 +15,11 @@ const details = ({ event }) => {
         variants={overlayVariants}
         initial="hidden"
         whileHover="visible"
-        className="flex h-full w-full  absolute bottom-0 left-0  bg-black/40  flex-col justify-between items-center ">
-        <Link href="/book">
-          <button className="bg-accent w-30 h-10 mt-[50%] mb-8 lg:mt-25 cursor-pointer z-12">
+        className="flex h-full w-full  absolute bottom-0 left-0  bg-black/50  flex-col justify-between items-center ">
+        <Link
+          href="/book "
+          className="mt-[50%] mb-8 lg:mt-25">
+          <button className="bg-accent  w-30 h-10  cursor-pointer z-12  ">
             Book Now
           </button>
         </Link>
