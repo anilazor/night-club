@@ -1,6 +1,7 @@
 import Header from "@/app/components/header/Header";
 import HeroSection from "@/app/components/HeroSection/HeroSection";
 import { Suspense } from "react";
+
 import Image from "next/image";
 import BlogFull1 from "../../../assets/content-img/blog_full1.jpg";
 import BlogFull2 from "../../../assets/content-img/blog_full2.jpg";
@@ -29,7 +30,9 @@ const imageMap = {
 const FetchProduct = async ({ params }) => {
   "use server";
   const { id } = await params;
-  const response = await fetch(`http://localhost:4000/blogposts/${id}`);
+  const response = await fetch(`http://localhost:4000/blogposts/${id}`
+    
+  );
   const post = await response.json();
   const filename = post.asset?.url?.split("/").pop();
   const imageSrc = imageMap[filename] || BlogFull1;
@@ -62,7 +65,7 @@ const FetchProduct = async ({ params }) => {
         </div>
         <div className="col-(--content-col)">
           <FetchComment id={post.id} />
-          <CommentForm />
+          <CommentForm id={post.id} />
         </div>
       </main>
     </>
@@ -88,6 +91,10 @@ const FetchComment = async ({ id }) => {
         }
       />
       {post.comments.map((comment) => {
+         if (!comment.date) {
+          console.warn("Comment missing date:", comment);
+          return null;
+        }
         const getDate = comment.date.split("T")[0];
         const [year, month, day] = getDate.split("-");
         const months = [
@@ -107,7 +114,9 @@ const FetchComment = async ({ id }) => {
 
         const formattedDate = `${day}. ${months[month - 1]} ${year}`;
         return (
-          <div className="grid gap-5">
+          <div
+            key={comment.id}
+            className="grid gap-5">
             <div className="flex gap-3 items-baseline">
               <Subheading text={`${comment.name} - `} />
               <Caption
