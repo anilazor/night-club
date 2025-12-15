@@ -1,7 +1,6 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -19,7 +18,6 @@ const dateFormat = new Intl.DateTimeFormat("en-GB", {
   year: "numeric",
 });
 
-// Zod schema: date stored as Date, transformed to ISO for submission
 const formBookSchema = z.object({
   name: z
     .string()
@@ -45,12 +43,6 @@ const BookForm = ({ selectedTable, setSelectedTable }) => {
   const dateValue = watch("date");
 
   const url = "http://localhost:4000/reservations";
-
-  useEffect(() => {
-    if (selectedTable != null) {
-      setValue("table", selectedTable, { shouldValidate: true });
-    }
-  }, [selectedTable, setValue]);
 
   const onSubmit = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -93,8 +85,9 @@ const BookForm = ({ selectedTable, setSelectedTable }) => {
           <input
             type="text"
             readOnly
+            value={selectedTable ?? ""}
             onClick={() => {
-              if (!watch("table")) {
+              if (!selectedTable) {
                 setError("table", {
                   type: "manual",
                   message: "Please select a table by clicking on an available table.",
@@ -129,13 +122,11 @@ const BookForm = ({ selectedTable, setSelectedTable }) => {
           </Popover>
         </div>
 
-        {/* --- PHONE --- */}
         <div className="w-full h-full">
           <p className="text-red-500 text-xs h-6 align-baseline pt-2">{errors.phone?.message}</p>
           <input type="text" className={`w-full h-full border md:p-4 p-2 focus:outline-accent placeholder:text-foreground ${errors.phone ? "border-red-500" : ""}`} id="phone" placeholder="Your Contact Number" {...register("phone", { valueAsNumber: true })} />
         </div>
 
-        {/* --- COMMENT --- */}
         <div className="col-span-full">
           <p className="text-red-500 text-xs h-6 align-baseline pt-2">{errors.comment?.message}</p>
           <textarea className={`border md:p-4 h-80 p-2 w-full focus:outline-accent placeholder:text-foreground ${errors.comment ? "border-red-500" : ""}`} id="comment" placeholder="Your Comment" {...register("comment")} />
