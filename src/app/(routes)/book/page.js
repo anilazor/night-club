@@ -1,20 +1,20 @@
-"use client";
-import { useState } from "react";
 import Header from "@/app/components/header/Header";
-import BookForm from "@/app/components/book/BookForm";
-import TableGrid from "@/app/components/book/TableGrid";
 import HeroSection from "@/app/components/HeroSection/HeroSection";
-import { set } from "zod";
+import BookTableOverview from "@/app/components/book/BookTableOverview";
 
-export default function BookTable() {
-  const [selectedTable, setSelectedTable] = useState();
+export default async function BookTable() {
+  const response = await fetch("http://localhost:4000/reservations");
+  const data = await response.json();
+
+  const takenTables = data.map((r) => String(r.table));
+  const date = data.map((r) => r.date);
+
   return (
     <>
       <Header />
       <main className="grid col-(--full-col) grid-cols-subgrid">
         <HeroSection text="Book table" />
-        <TableGrid selectedTable={selectedTable} setSelectedTable={setSelectedTable} />
-        <BookForm selectedTable={selectedTable} setSelectedTable={setSelectedTable} />
+        <BookTableOverview takenTables={takenTables} />
       </main>
     </>
   );
