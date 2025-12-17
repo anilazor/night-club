@@ -1,8 +1,5 @@
 import { Suspense } from "react";
 import Image from "next/image";
-import BlogFull1 from "../../../../public/assets/content-img/blog_full1.jpg";
-import BlogFull2 from "../../../../public/assets/content-img/blog_full2.jpg";
-import BlogFull3 from "../../../../public/assets/content-img/blog_full3.jpg";
 import { Caption, HeadingSecondary, HeadingXL, Subheading } from "@/app/components/typography";
 import CommentForm from "@/app/components/blogpage/CommentForm";
 import ErrorMessages from "../errormessages/ErrorMessages";
@@ -15,16 +12,16 @@ export default function BlogPostSingel({ id }) {
   );
 }
 const imageMap = {
-  "blog_full1.jpg": BlogFull1,
-  "blog_full2.jpg": BlogFull2,
-  "blog_full3.jpg": BlogFull3,
+  "blog_full1.jpg": "/assets/content-img/blog_full1.jpg",
+  "blog_full2.jpg": "/assets/content-img/blog_full2.jpg",
+  "blog_full3.jpg": "/assets/content-img/blog_full3.jpg",
 };
 const FetchProduct = async ({ id }) => {
   try {
     const response = await fetch(`http://localhost:4000/blogposts/${id}?embed=comments`);
     const post = await response.json();
     const filename = post.asset?.url?.split("/").pop();
-    const imageSrc = imageMap[filename] || BlogFull1;
+    const imageSrc = imageMap[filename] || "/assets/content-img/blog_full1.jpg";
 
     return (
       <>
