@@ -36,7 +36,7 @@ const FetchBlogPost = async () => {
     const posts = Array.isArray(data) ? data : data?.posts ?? [];
 
     const directions = ["flex", "flex-row-reverse"];
-    const paddings = ["md:pr-30 pl-5", "md:pl-30 pr-5"];
+    const paddings = ["md:pr-30 md:pl-5", "md:pl-30 md:pr-5"];
 
     if (!posts || posts.length === 0) {
       return <div>No posts available</div>;
@@ -52,7 +52,7 @@ const FetchBlogPost = async () => {
         <section href={`/detalje/${post.id}`} key={post.id ?? index} className={`grid group md:flex ${direction}`}>
           <Image src={imageSrc} alt={post.title} width={300} height={200} className="self-stretch w-full object-cover basis-0 grow" />
           <div className=" basis-0 grow">
-            <div className={`grid py-10 ${padding}`}>
+            <div className={`grid px-6 md:px-0 py-10 ${padding}`}>
               <HeadingSecondary text={post.title} />
               <Caption text={`By: ${post.author} / ${post.comments.length > 1 ? post.comments.length + " comments" : "1 comment"} / 16. November 2016`} color="pink" />
               <Caption text={post.content} wordLimit={70} />
