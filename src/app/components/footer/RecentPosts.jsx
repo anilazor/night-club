@@ -1,13 +1,11 @@
 "use client";
-import postOne from "../../assets/content-img/recent_post1.jpg";
-import postTwo from "../../assets/content-img/recent_post2.jpg";
 import Image from "next/image";
 import { Caption, BannerText } from "../typography";
 
 const RecentPosts = ({ text, date, image }) => {
   const imgMap = {
-    img1: postOne,
-    img2: postTwo,
+    img1: "/assets/content-img/recent_post1.jpg",
+    img2: "/assets/content-img/recent_post2.jpg",
   };
   const imgSrc = imgMap[image] || img1;
   return (

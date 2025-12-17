@@ -3,9 +3,6 @@ import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Caption, HeadingSecondary } from "../typography";
-import BlogFull1 from "../../assets/content-img/blog_full1.jpg";
-import BlogFull2 from "../../assets/content-img/blog_full2.jpg";
-import BlogFull3 from "../../assets/content-img/blog_full3.jpg";
 import MainButton from "../buttons/MainButton";
 import ErrorMessages from "../errormessages/ErrorMessages";
 
@@ -18,9 +15,9 @@ const BlogPost = () => {
 };
 
 const imageMap = {
-  "blog_full1.jpg": BlogFull1,
-  "blog_full2.jpg": BlogFull2,
-  "blog_full3.jpg": BlogFull3,
+  "blog_full1.jpg": "/assets/content-img/blog_full1.jpg",
+  "blog_full2.jpg": "/assets/content-img/blog_full2.jpg",
+  "blog_full3.jpg": "/assets/content-img/blog_full3.jpg",
 };
 
 const FetchBlogPost = async () => {
@@ -49,7 +46,7 @@ const FetchBlogPost = async () => {
       const direction = directions[index % directions.length];
       const padding = paddings[index % paddings.length];
       const filename = post.asset?.url?.split("/").pop();
-      const imageSrc = imageMap[filename] || BlogFull1;
+      const imageSrc = imageMap[filename] || "/assets/content-img/blog_full1.jpg";
 
       return (
         <section href={`/detalje/${post.id}`} key={post.id ?? index} className={`grid group md:flex ${direction}`}>
