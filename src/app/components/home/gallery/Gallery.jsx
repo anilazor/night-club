@@ -23,7 +23,9 @@ const FetchGallery = async () => {
     const isImage = Array.isArray(data) ? data : data?.isImage ?? [];
 
     return <GalleryImages isImage={isImage} />;
-  } catch (error) {
-    return <ErrorMessages message="We’re having some trouble loading this data, try again later!" />;
+  } catch {
+    return (
+      <ErrorMessages message="We’re having some trouble loading this data, try again later!" />
+    );
   }
 };

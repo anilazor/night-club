@@ -2,6 +2,7 @@ import HomeHero from "./components/home/hero/HomeHero";
 import Header from "./components/header/Header";
 import Events from "./components/home/events/Events";
 import Gallery from "./components/home/gallery/Gallery";
+import GalleryNew from "./components/home/gallery/GalleryNew";
 import Welcome from "./components/home/welcome/Welcome";
 import LatestVideo from "./components/home/video/LatestVideo";
 import RecentBlog from "./components/home/recentblog/RecentBlog";
@@ -18,7 +19,8 @@ export default function Home() {
         <Header />
         <Welcome />
         <Events />
-        <Gallery />
+        {/* <Gallery /> */}
+        <GalleryNew />
         <NightClubTrack />
         <LatestVideo />
         <FetchTestimonials />
