@@ -111,12 +111,12 @@ function Cursor({ ref, children, className, style, ...props }) {
 
 function CursorFollow({
   ref,
-  sideOffset = 5,
-  align = "bottom-right",
+  sideOffset = 10,
+  align = "bottom",
   children,
   className,
   style,
-  transition = { stiffness: 800, damping: 60, bounce: 0 },
+  transition = { stiffness: 1000, damping: 70, bounce: 0 },
   ...props
 }) {
   const { cursorPos, isActive, cursorRef } = useCursor();

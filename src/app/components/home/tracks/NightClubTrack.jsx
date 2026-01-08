@@ -4,7 +4,6 @@ import { HeadingMain } from "../../typography";
 import AlbumLibrary from "./AlbumLibrary";
 import MediaPlayer from "./MediaPlayer";
 import { useState } from "react";
-import Cursor from "../../ui/Cursor";
 
 const NightClubTrack = () => {
   const [isSong, setSong] = useState("black-box-funky.mp3");
@@ -14,7 +13,6 @@ const NightClubTrack = () => {
     <section
       className="grid grid-cols-subgrid col-(--full-col)"
       id="night club tracks">
-      <Cursor />
       <div className=" h-50 col-(--content-col) flex items-center">
         <HeadingMain
           color="white"
@@ -26,6 +24,7 @@ const NightClubTrack = () => {
         isImage={isImage}
         isTitle={isTitle}
       />
+
       <AlbumLibrary
         setSong={setSong}
         isImage={isImage}
