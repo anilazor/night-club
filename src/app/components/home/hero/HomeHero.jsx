@@ -12,13 +12,13 @@ export default function HomeHero() {
     return images[Math.floor(Math.random() * images.length)];
   });
   return (
-    <div className="w-screen relative h-screen col-(--full-col) grid-cols-subgrid grid -mb-10">
+    <div className="w-screen relative h-screen col-(--full-col) grid-cols-subgrid grid overflow-hidden">
       <MusicLoader />
 
       <motion.img
         src={isImg}
         alt="Background image"
-        className="bg-black absolute inset-0 col-(--full-col) object-cover row-span-full  min-w-screen  h-screen"
+        className="bg-black absolute inset-0 col-(--full-col) object-cover row-span-full  min-w-screen  h-screen scale-110"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 5, ease: "anticipate", type: "tween" }}

@@ -54,14 +54,14 @@ const GalleryNew = () => {
         className="w-full h-full grid md:grid-cols-6 grid-cols-2 md:grid-rows-2 "
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}>
+        viewport={{ once: false, amount: 0.5 }}>
         <motion.div
           className="contents"
           variants={containerVariant}>
           {firstRow.map((img) => {
             const variant = img.colSpan === 2 ? span2Variant : span1Variant;
             const colSpanClass =
-              img.colSpan === 2 ? " col-span-2" : "md:col-span-1 col-span-2";
+              img.colSpan === 2 ? "col-span-2" : "md:col-span-1 col-span-2";
 
             return (
               <motion.div
