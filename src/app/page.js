@@ -11,20 +11,17 @@ import FetchTestimonials from "./components/home/testimonials/FetchTestimonials"
 
 export default function Home() {
   return (
-    <>
-      <main className="grid col-(--full-col) grid-cols-subgrid">
-        <HomeHero />
-        <Header />
-        <div id="welcome"></div>
-        <Welcome />
-        <Events />
-        <Gallery />
-        <NightClubTrack />
-        <LatestVideo />
-        <FetchTestimonials />
-        <RecentBlog />
-        <NewsLetter />
-      </main>
-    </>
+    <main className="grid col-(--full-col) grid-cols-subgrid">
+      <HomeHero />
+      <Header />
+      <Welcome />
+      <Events />
+      <Gallery />
+      <NightClubTrack />
+      <LatestVideo />
+      <FetchTestimonials />
+      <RecentBlog />
+      <NewsLetter />
+    </main>
   );
 }

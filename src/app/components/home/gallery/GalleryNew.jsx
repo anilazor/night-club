@@ -44,7 +44,7 @@ const GalleryNew = () => {
 
   return (
     <div
-      className="col-(--full-col) h-[1000px] md:h-[500px] mb-50"
+      className="col-(--full-col) h-[2400px] md:h-[500px] mb-50"
       id="gallery">
       <div className=" h-50 flex items-center">
         <HeadingMain
@@ -60,15 +60,19 @@ const GalleryNew = () => {
         <motion.div
           className="contents"
           variants={containerVariant}>
-          {firstRow.map((img) => {
+          {firstRow.map((img, index) => {
             const variant = img.colSpan === 2 ? span2Variant : span1Variant;
+            const rowSpanClass =
+              index === 1 || index === 3
+                ? "row-span-2 md:row-span-1"
+                : "row-span-1";
             const colSpanClass =
               img.colSpan === 2 ? "col-span-2" : "md:col-span-1 col-span-2";
 
             return (
               <motion.div
                 key={img.id}
-                className={` ${colSpanClass}`}
+                className={` ${colSpanClass} ${rowSpanClass}`}
                 variants={variant}>
                 <Triangles>
                   <Image

@@ -4,12 +4,18 @@ import Image from "next/image";
 import ActiveLink from "./ActiveLink";
 import Link from "next/link";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [pathname]);
 
   const links = (
     <ul className="flex flex-col md:flex-row font-medium uppercase items-center text-center md:text-start space-y-8 md:space-y-0 md:space-x-8">
