@@ -1,3 +1,5 @@
+"use server";
+
 import HomeHeroAnimation from "./HomeHeroAnimation";
 import MusicLoader from "./MusicLoader";
 import { Suspense } from "react";
