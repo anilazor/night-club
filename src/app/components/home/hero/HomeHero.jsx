@@ -7,15 +7,11 @@ import { useState, useEffect } from "react";
 
 export default function HomeHero() {
   const images = ["/assets/bg/header_bg_1.jpg", "/assets/bg/header_bg_2.jpg"];
-
   const [isImg, setIsImg] = useState(images[0]);
-
   const [hideCursor, setHideCursor] = useState(true);
 
   useEffect(() => {
-    // Hydration error fix vha. useEffect
     setIsImg(images[Math.floor(Math.random() * images.length)]);
-
     // Extra lækker animation med skjult cursor
     const timer = setTimeout(() => setHideCursor(false), 3000);
     return () => clearTimeout(timer);
