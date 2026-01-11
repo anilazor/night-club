@@ -12,7 +12,7 @@ const truncateWords = (text, wordLimit) => {
 export const HeadingXL = ({ text, color }) => (
   <h1
     style={{ fontSize: "var(--step-5)" }}
-    className={`uppercase font-bold ${color}`}>
+    className={`uppercase font-bold ${color} `}>
     {text}
   </h1>
 );

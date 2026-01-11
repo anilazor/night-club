@@ -16,7 +16,7 @@ export default function HomeHero({ image }) {
 
   return (
     <div
-      className={`relative  h-screen overflow-hidden col-(--full-col) grid-cols-subgrid grid ${
+      className={`relative  h-screen  col-(--full-col) grid-cols-subgrid grid ${
         hideCursor ? "cursor-none" : "cursor-auto"
       }`}
       id="hero">
@@ -38,7 +38,7 @@ export default function HomeHero({ image }) {
           <motion.img
             src="/assets/icon/Logo.svg"
             alt="Logo"
-            className="px-5  transition-all transition-discrete"
+            className="px-5  "
             initial={{ rotateX: 90, opacity: 0 }}
             animate={{ rotateX: 0, opacity: 1 }}
             transition={{
@@ -60,7 +60,7 @@ export default function HomeHero({ image }) {
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 2, duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col justify-center items-center w-full mt-4 text-center  ml-2 md:ml-3 text-nowrap transition-all transition-discrete">
+          className="flex flex-col justify-center items-center w-full mt-4 text-center  ml-2 md:ml-3 text-nowrap ">
           <HeroSubheading
             color="white flex self-center justify-center items-center w-full "
             text="have a good time"

@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`overflow-x-hidden grid grid-cols-(--project-grid-cols)   ${ubuntu.variable}  antialiased`}>
+        className={`overflow-x-hidden  grid grid-cols-(--project-grid-cols)  ${ubuntu.variable}  antialiased`}>
         {children}
 
         <Footer />
