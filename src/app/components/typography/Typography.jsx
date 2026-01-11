@@ -57,7 +57,7 @@ export const BannerText = ({ text, color }) => (
 export const HeroSubheading = ({ text, color }) => (
   <h3
     style={{ fontSize: "var(--step--2)" }}
-    className={`uppercase md:text-4xl tracking-[0.8125em] md:tracking-[1.2rem] transition-all transition-discrete ${color}`}>
+    className={`uppercase md:text-4xl tracking-[1.4ch] text-center  ${color}`}>
     {text}
   </h3>
 );

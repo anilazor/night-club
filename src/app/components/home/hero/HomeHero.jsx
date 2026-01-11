@@ -28,7 +28,7 @@ export default function HomeHero() {
       <motion.img
         src={isImg}
         alt="Background image"
-        className="bg-black absolute inset-0 col-(--full-col) object-cover row-span-full  min-w-screen  h-screen scale-110"
+        className="bg-black absolute w-screen inset-0 col-(--full-col) object-cover row-span-full  min-w-screen  h-screen scale-110"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 5, ease: "anticipate", type: "tween" }}

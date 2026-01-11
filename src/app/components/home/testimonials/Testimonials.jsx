@@ -35,7 +35,7 @@ export default function Testimonials({ testimonials = [] }) {
   }
 
   return (
-    <div className="col-(--full-col) grid grid-cols-subgrid h-full">
+    <div className="col-(--full-col) grid grid-cols-subgrid h-full bg-black">
       <PartyBg>
         {content}
 

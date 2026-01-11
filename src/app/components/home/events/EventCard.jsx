@@ -22,13 +22,13 @@ export default function EventCard({ event }) {
   const time = isValidDate ? timeFormat.format(eventDate) : "--:--";
 
   return (
-    <div className="relative  mb-10 w-full">
+    <div className="relative mb-5 w-full">
       <HoverFrame>
         <Image
           src={`/assets/content-img/event-thumb${event.id}.jpg`}
           alt={event.title || "Event image"}
-          width={403}
-          height={570}
+          width={592}
+          height={419}
           className="w-full h-full object-cover"
         />
         <DetailsOverlay

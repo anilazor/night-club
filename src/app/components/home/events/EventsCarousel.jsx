@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { HeadingMain } from "../../typography";
 import GradientBg from "../../bgoverlays/GradientBg";
 import EventCard from "./EventCard";
@@ -37,13 +37,9 @@ export default function EventsCarousel({ initialEvents }) {
     setCurrentIndex(index);
   };
 
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, []);
-
   return (
     <section
-      className="col-(--full-col) grid grid-cols-subgrid"
+      className="col-(--full-col) grid grid-cols-subgrid bg-black"
       id="events">
       <GradientBg>
         <div className="col-(--content-col) flex flex-col">
@@ -55,25 +51,27 @@ export default function EventsCarousel({ initialEvents }) {
           </div>
 
           {slides.length > 0 && (
-            <div className="w-full max-h-125 mt-6">
+            <div className="w-full row-span-1 mt-6 ">
               <div
                 ref={scrollRef}
                 onScroll={handleScroll}
                 className="
-                  flex overflow-x-auto scroll-smooth
+                  flex overflow-x-auto  scroll-smooth
                   snap-x snap-mandatory
-                  no-scrollbar  
+                  no-scrollbar 
                 ">
                 {slides.map((slideEvents, slideIndex) => (
                   <div
                     key={slideIndex}
-                    className="min-w-full snap-start first:mr-5 last:ml-5">
-                    <div className="w-full md:flex gap-5 ">
+                    className="min-w-full h-full snap-start first:mr-5 last:ml-5  overflow-y-hidden flex items-stretch">
+                    <div className="w-full md:flex gap-5 items-stretch">
                       {slideEvents.map((event, idx) => (
                         <div
                           key={event.id}
                           className={
-                            idx === 1 ? "hidden md:block w-full" : "w-full"
+                            idx === 1
+                              ? "invisible md:visible absolute md:static w-full"
+                              : "w-full"
                           }>
                           <EventCard event={event} />
                         </div>

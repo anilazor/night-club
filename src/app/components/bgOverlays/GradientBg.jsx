@@ -9,7 +9,8 @@ const gradientOverlay = ({ children }) => {
         fill
         className="object-cover opacity-40"
       />
-      <div className="relative z-10 col-(--content-col)">{children}</div>
+
+      <div className=" relative z-10 col-(--content-col)">{children}</div>
     </div>
   );
 };
